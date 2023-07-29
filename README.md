@@ -1,2 +1,1 @@
-# computer-science-master
-Computer Science Masters Degree Courses
+# Computer Science Masters Degree Courses
