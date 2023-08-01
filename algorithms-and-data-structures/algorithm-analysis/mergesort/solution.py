@@ -1,6 +1,5 @@
 import time
 
-# Function to merge two sorted arrays into one sorted array
 def merge(arr, low, mid, high):
     left = arr[low:mid+1]
     right = arr[mid+1:high+1]
@@ -26,49 +25,30 @@ def merge(arr, low, mid, high):
         j += 1
         k += 1
 
-# Merge Sort function
 def mergeSort(arr, low, high):
     if low < high:
         mid = (low + high) // 2
-        # Record the start time
-        start = time.time()
 
         mergeSort(arr, low, mid)
         mergeSort(arr, mid + 1, high)
 
         merge(arr, low, mid, high)
-        # Record the end time
-        end = time.time()
-        # Calculate the duration and print the execution time
-        duration = (end - start) * 1000000  # Microseconds
-        print(f"Merge Sort Execution Time: {duration:.2f} microseconds")
 
-# Function to read numbers from a file and store them in a list
-def readNumbersFromFile(filename):
+def read_numbers_from_file(filename):
     numbers = []
-    with open(filename, "r") as inputFile:
-        for line in inputFile:
-            number = int(line.strip())
-            numbers.append(number)
+    with open(filename, 'r') as file:
+        for line in file:
+            numbers.append(int(line.strip()))
     return numbers
 
-# Function to print the elements of a list
-def printList(arr):
-    print(*arr)
+def main():
+    filenames = ["file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"]
+    for filename in filenames:
+        start = time.time()
+        mergeSort(read_numbers_from_file("../"+filename), 0, len(read_numbers_from_file("../"+filename)) - 1)
+        end = time.time()
+        duration = (end - start) * 1e6
+        print("Time taken by Quick Sort: {:.2f} microseconds".format(duration))
 
 if __name__ == "__main__":
-    filenames = ["file1.txt", "file2.txt", "file3.txt"]
-    numbers = []
-
-    # Read numbers from each file in the loop
-    for filename in filenames:
-        numbers.extend(readNumbersFromFile(filename))
-
-    print("Numbers read from files:")
-    printList(numbers)
-
-    # Apply Merge Sort to the numbers
-    mergeSort(numbers, 0, len(numbers) - 1)
-
-    print("Sorted array:")
-    printList(numbers)
+    main()
