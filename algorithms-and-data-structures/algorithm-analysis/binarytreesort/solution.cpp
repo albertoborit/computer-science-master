@@ -43,8 +43,6 @@ void inOrderTraversal(TreeNode* root, vector<int>& sortedArr) {
 
 // Binary Tree Sort function
 void binaryTreeSort(vector<int>& arr) {
-    // Record the start time
-    auto start = high_resolution_clock::now();
 
     TreeNode* root = nullptr;
     for (int num : arr) {
@@ -53,18 +51,11 @@ void binaryTreeSort(vector<int>& arr) {
 
     arr.clear();
     inOrderTraversal(root, arr);
-
-    // Record the end time
-    auto end = high_resolution_clock::now();
-
-    // Calculate the duration and print the execution time
-    auto duration = duration_cast<microseconds>(end - start);
-    cout << "Binary Tree Sort Execution Time: " << duration.count() << " microseconds" << endl;
 }
 
-// Function to read numbers from a file and store them in a vector
-void readNumbersFromFile(const string& filename, vector<int>& numbers) {
+void readNumbersFromFile(const string& filename) {
     ifstream inputFile(filename);
+    vector<int> numbers;
 
     if (!inputFile.is_open()) {
         cout << "Error opening file: " << filename << endl;
@@ -79,31 +70,17 @@ void readNumbersFromFile(const string& filename, vector<int>& numbers) {
     inputFile.close();
 }
 
-// Function to print the elements of an array
-void printArray(const vector<int>& arr) {
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
-}
-
 int main() {
-    vector<string> filenames = {"file1.txt", "file2.txt", "file3.txt"};
-    vector<int> numbers;
+    vector<string> filenames = {"file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"};
 
-    // Read numbers from each file in the loop
     for (const string& filename : filenames) {
-        readNumbersFromFile(filename, numbers);
+        auto start = high_resolution_clock::now();
+        readNumbersFromFile("../"+filename);
+        auto end = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(end - start);
+        cout << "Time taken by Binary Tree Sort: " << duration.count() << " microseconds" << endl;
     }
-
-    cout << "Numbers read from files:" << endl;
-    printArray(numbers);
-
-    // Apply Binary Tree Sort to the numbers
-    binaryTreeSort(numbers);
-
-    cout << "Sorted array: ";
-    printArray(numbers);
 
     return 0;
 }
+

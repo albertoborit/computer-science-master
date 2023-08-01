@@ -11,10 +11,6 @@ import (
 // Function to perform Bubble Sort
 func bubbleSort(arr []int) {
 	n := len(arr)
-
-	// Record the start time
-	start := time.Now()
-
 	for i := 0; i < n-1; i++ {
 		swapped := false
 
@@ -30,61 +26,38 @@ func bubbleSort(arr []int) {
 			break
 		}
 	}
-
-	// Record the end time
-	end := time.Now()
-
-	// Calculate the duration and print the execution time
-	duration := end.Sub(start)
-	fmt.Println("Bubble Sort Execution Time:", duration)
 }
 
 // Function to read numbers from a file and store them in a slice
-func readNumbersFromFile(filename string) ([]int, error) {
-	content, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
+func readNumbersFromFile(filename string) ([]int) {
+    content, err := ioutil.ReadFile(filename)
+    if err != nil {
+        return nil
+    }
 
-	lines := strings.Split(string(content), "\n")
-	var numbers []int
+    lines := strings.Split(string(content), "\n")
+    var numbers []int
 
-	for _, line := range lines {
-		number, err := strconv.Atoi(line)
-		if err != nil {
-			continue // Skip if not a valid number
-		}
-		numbers = append(numbers, number)
-	}
+    for _, line := range lines {
+        number, err := strconv.Atoi(line)
+        if err != nil {
+            continue // Skip if not a valid number
+        }
+        numbers = append(numbers, number)
+    }
 
-	return numbers, nil
-}
-
-// Function to print the elements of a slice
-func printSlice(arr []int) {
-	fmt.Println(arr)
+    return numbers
 }
 
 func main() {
-	filenames := []string{"file1.txt", "file2.txt", "file3.txt"}
-	var numbers []int
+    filenames := []string {"file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"}
 
-	// Read numbers from each file in the loop
-	for _, filename := range filenames {
-		nums, err := readNumbersFromFile(filename)
-		if err != nil {
-			fmt.Println("Error reading file:", err)
-			continue
-		}
-		numbers = append(numbers, nums...)
-	}
-
-	fmt.Println("Numbers read from files:")
-	printSlice(numbers)
-
-	// Apply Bubble Sort to the numbers
-	bubbleSort(numbers)
-
-	fmt.Println("Sorted array:")
-	printSlice(numbers)
+    // Read numbers from each file in the loop
+    for _, filename := range filenames {
+        start := time.Now()
+        readNumbersFromFile("../"+filename)
+        end := time.Now()
+        duration := end.Sub(start)
+        fmt.Println("Time taken by Bubble Sort:", duration)
+    }
 }

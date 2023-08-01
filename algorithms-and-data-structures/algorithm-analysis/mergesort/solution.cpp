@@ -52,24 +52,16 @@ void merge(vector<int>& arr, int low, int mid, int high) {
 void mergeSort(vector<int>& arr, int low, int high) {
     if (low < high) {
         int mid = low + (high - low) / 2;
-        // Record the start time
-        auto start = high_resolution_clock::now();
-
         mergeSort(arr, low, mid);
         mergeSort(arr, mid + 1, high);
 
         merge(arr, low, mid, high);
-        // Record the end time
-        auto end = high_resolution_clock::now();
-        // Calculate the duration and print the execution time
-        auto duration = duration_cast<microseconds>(end - start);
-        cout << "Merge Sort Execution Time: " << duration.count() << " microseconds" << endl;
     }
 }
 
-// Function to read numbers from a file and store them in a vector
-void readNumbersFromFile(const string& filename, vector<int>& numbers) {
+void readNumbersFromFile(const string& filename) {
     ifstream inputFile(filename);
+    vector<int> numbers;
 
     if (!inputFile.is_open()) {
         cout << "Error opening file: " << filename << endl;
@@ -84,31 +76,17 @@ void readNumbersFromFile(const string& filename, vector<int>& numbers) {
     inputFile.close();
 }
 
-// Function to print the elements of an array
-void printArray(const vector<int>& arr) {
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
-}
-
 int main() {
-    vector<string> filenames = {"file1.txt", "file2.txt", "file3.txt"};
-    vector<int> numbers;
+    vector<string> filenames = {"file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"};
 
-    // Read numbers from each file in the loop
     for (const string& filename : filenames) {
-        readNumbersFromFile(filename, numbers);
+        auto start = high_resolution_clock::now();
+        readNumbersFromFile("../"+filename);
+        auto end = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(end - start);
+        cout << "Time taken by Merge Sort: " << duration.count() << " microseconds" << endl;
     }
-
-    cout << "Numbers read from files:" << endl;
-    printArray(numbers);
-
-    // Apply Merge Sort to the numbers
-    mergeSort(numbers, 0, numbers.size() - 1);
-
-    cout << "Sorted array: ";
-    printArray(numbers);
 
     return 0;
 }
+

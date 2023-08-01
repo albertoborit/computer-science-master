@@ -1,0 +1,15 @@
+Time taken by Quick Sort: 269.17 microseconds
+Time taken by Quick Sort: 3802.78 microseconds
+Time taken by Quick Sort: 5637.88 microseconds
+Time taken by Quick Sort: 10066.75 microseconds
+Time taken by Quick Sort: 11247.63 microseconds
+Time taken by Quick Sort: 23124.93 microseconds
+Time taken by Quick Sort: 24839.64 microseconds
+Time taken by Quick Sort: 29170.04 microseconds
+Time taken by Quick Sort: 27366.64 microseconds
+Time taken by Quick Sort: 26000.98 microseconds
+Time taken by Quick Sort: 33576.97 microseconds
+Time taken by Quick Sort: 75062.99 microseconds
+Time taken by Quick Sort: 97311.50 microseconds
+Time taken by Quick Sort: 127914.91 microseconds
+Time taken by Quick Sort: 163233.76 microseconds

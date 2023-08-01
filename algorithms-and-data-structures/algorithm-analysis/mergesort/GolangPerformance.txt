@@ -1,0 +1,15 @@
+Time taken by Merge Sort: 274.6µs
+Time taken by Merge Sort: 0s     
+Time taken by Merge Sort: 535.3µs
+Time taken by Merge Sort: 534.3µs
+Time taken by Merge Sort: 518.5µs
+Time taken by Merge Sort: 530.9µs
+Time taken by Merge Sort: 529.4µs
+Time taken by Merge Sort: 529µs
+Time taken by Merge Sort: 527.2µs
+Time taken by Merge Sort: 527.4µs
+Time taken by Merge Sort: 526.3µs
+Time taken by Merge Sort: 2.1434ms
+Time taken by Merge Sort: 1.0682ms
+Time taken by Merge Sort: 2.6661ms
+Time taken by Merge Sort: 2.1345ms

@@ -1,11 +1,11 @@
 package main
 
 import (
-    "fmt"
-    "io/ioutil"
-    "strconv"
-    "strings"
-    "time"
+	"fmt"
+	"io/ioutil"
+	"strconv"
+	"strings"
+	"time"
 )
 
 // Function to swap two elements
@@ -32,26 +32,17 @@ func partition(arr []int, low, high int) int {
 // Quick Sort function
 func quickSort(arr []int, low, high int) {
     if low < high {
-        // Print start time
-        start := time.Now()
-
         pivotIndex := partition(arr, low, high)
-
         quickSort(arr, low, pivotIndex-1)
         quickSort(arr, pivotIndex+1, high)
-
-        // Print end time
-        end := time.Now()
-        duration := end.Sub(start)
-        fmt.Println("Time taken by Quick Sort:", duration)
     }
 }
 
 // Function to read numbers from a file and store them in a slice
-func readNumbersFromFile(filename string) ([]int, error) {
+func readNumbersFromFile(filename string) ([]int) {
     content, err := ioutil.ReadFile(filename)
     if err != nil {
-        return nil, err
+        return nil
     }
 
     lines := strings.Split(string(content), "\n")
@@ -65,37 +56,18 @@ func readNumbersFromFile(filename string) ([]int, error) {
         numbers = append(numbers, number)
     }
 
-    return numbers, nil
-}
-
-// Function to print the elements of a slice
-func printSlice(arr []int) {
-    for _, num := range arr {
-        fmt.Print(num, " ")
-    }
-    fmt.Println()
+    return numbers
 }
 
 func main() {
-    filenames := []string{"file1.txt", "file2.txt", "file3.txt"}
-    var numbers []int
+    filenames := []string {"file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"}
 
     // Read numbers from each file in the loop
     for _, filename := range filenames {
-        nums, err := readNumbersFromFile(filename)
-        if err != nil {
-            fmt.Println("Error reading file:", err)
-            continue
-        }
-        numbers = append(numbers, nums...)
+        start := time.Now()
+        readNumbersFromFile("../"+filename)
+        end := time.Now()
+        duration := end.Sub(start)
+        fmt.Println("Time taken by Quick Sort:", duration)
     }
-
-    fmt.Println("Numbers read from files:")
-    printSlice(numbers)
-
-    // Apply Quick Sort to the numbers
-    quickSort(numbers, 0, len(numbers)-1)
-
-    fmt.Println("Sorted array:")
-    printSlice(numbers)
 }

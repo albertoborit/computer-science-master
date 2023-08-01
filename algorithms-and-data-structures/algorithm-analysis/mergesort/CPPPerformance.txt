@@ -1,0 +1,15 @@
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 0 microseconds
+Time taken by Merge Sort: 1001 microseconds
+Time taken by Merge Sort: 998 microseconds
+Time taken by Merge Sort: 1000 microseconds
+Time taken by Merge Sort: 1000 microseconds
+Time taken by Merge Sort: 1999 microseconds
+Time taken by Merge Sort: 3000 microseconds
+Time taken by Merge Sort: 5003 microseconds
+Time taken by Merge Sort: 6996 microseconds
+Time taken by Merge Sort: 8999 microseconds

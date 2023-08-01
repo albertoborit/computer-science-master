@@ -1,0 +1,15 @@
+Time taken by Quick Sort: 0s
+Time taken by Quick Sort: 0s
+Time taken by Quick Sort: 0s
+Time taken by Quick Sort: 0s
+Time taken by Quick Sort: 528.4µs
+Time taken by Quick Sort: 531µs
+Time taken by Quick Sort: 524.2µs
+Time taken by Quick Sort: 528µs
+Time taken by Quick Sort: 525.9µs
+Time taken by Quick Sort: 521.8µs
+Time taken by Quick Sort: 526.2µs
+Time taken by Quick Sort: 1.6536ms
+Time taken by Quick Sort: 535.7µs
+Time taken by Quick Sort: 1.7096ms
+Time taken by Quick Sort: 2.1111ms

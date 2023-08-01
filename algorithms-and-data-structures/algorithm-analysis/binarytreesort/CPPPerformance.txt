@@ -1,0 +1,15 @@
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 0 microseconds
+Time taken by Binary Tree Sort: 998 microseconds
+Time taken by Binary Tree Sort: 999 microseconds
+Time taken by Binary Tree Sort: 999 microseconds
+Time taken by Binary Tree Sort: 999 microseconds
+Time taken by Binary Tree Sort: 1997 microseconds
+Time taken by Binary Tree Sort: 3000 microseconds
+Time taken by Binary Tree Sort: 5000 microseconds
+Time taken by Binary Tree Sort: 7003 microseconds
+Time taken by Binary Tree Sort: 8000 microseconds

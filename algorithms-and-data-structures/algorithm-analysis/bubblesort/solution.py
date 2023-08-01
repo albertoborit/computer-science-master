@@ -1,11 +1,7 @@
 import time
 
-# Function to perform Bubble Sort
 def bubble_sort(arr):
     n = len(arr)
-
-    # Record the start time
-    start = time.time()
 
     for i in range(n - 1):
         swapped = False
@@ -15,44 +11,24 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
 
-        # If no two elements were swapped in the inner loop, the array is already sorted
         if not swapped:
             break
 
-    # Record the end time
-    end = time.time()
-
-    # Calculate the duration and print the execution time
-    duration = (end - start) * 1000000
-    print("Bubble Sort Execution Time:", duration, "microseconds")
-
-# Function to read numbers from a file and store them in a list
 def read_numbers_from_file(filename):
-    with open(filename, 'r') as inputFile:
-        numbers = [int(line.strip()) for line in inputFile]
+    numbers = []
+    with open(filename, 'r') as file:
+        for line in file:
+            numbers.append(int(line.strip()))
     return numbers
 
-# Function to print the elements of a list
-def print_list(arr):
-    print(*arr)
-
 def main():
-    filenames = ["file1.txt", "file2.txt", "file3.txt"]
-    numbers = []
-
-    # Read numbers from each file in the loop
+    filenames = ["file101.txt", "file1001.txt", "file2001.txt","file3001.txt", "file4001.txt", "file5001.txt","file6001.txt", "file7001.txt", "file8001.txt", "file9001.txt", "file10001.txt", "file20001.txt", "file30001.txt", "file40001.txt", "file50001.txt"]
     for filename in filenames:
-        nums = read_numbers_from_file(filename)
-        numbers.extend(nums)
-
-    print("Numbers read from files:")
-    print_list(numbers)
-
-    # Apply Bubble Sort to the numbers
-    bubble_sort(numbers)
-
-    print("Sorted array:")
-    print_list(numbers)
+        start = time.time()
+        bubble_sort(read_numbers_from_file("../"+filename))
+        end = time.time()
+        duration = (end - start) * 1e6
+        print("Time taken by Quick Sort: {:.2f} microseconds".format(duration))
 
 if __name__ == "__main__":
     main()
