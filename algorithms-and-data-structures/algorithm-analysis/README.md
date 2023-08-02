@@ -1,6 +1,6 @@
 # Complexity
 
-| Algoritmo        | Complejidad                                        | Memoria      | Método      |
+| Algorithm        | Complexity                                         | Memory       | Method      |
 |------------------|----------------------------------------------------|--------------|-------------|
 | Bubblesort       | O ( n ²)                                           | O (1)        | Intercambio |
 | Merge sort       | O ( n   log   n )                                  | O ( n )      | Mezcla      |
